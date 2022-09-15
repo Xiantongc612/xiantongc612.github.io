@@ -10,6 +10,6 @@ This repository will not accept any Pull Request but if welcome Issues around ty
 This website is served using GitHub Pages and Vitepress.
 
 ## License
-Markdown files(`*.md`) under `[docs/](./docs)` directory follows CC-BY-NC-ND-4.0-License License.
+Markdown files(`*.md`) under [`docs/`](./docs) directory follows CC-BY-NC-ND-4.0-License License.
 
 Other files follows MIT license.
