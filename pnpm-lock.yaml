@@ -10,7 +10,7 @@ importers:
     devDependencies:
       vitepress:
         specifier: 1.0.0-alpha.14
-        version: 1.0.0-alpha.14
+        version: 1.0.0-alpha.14(@algolia/client-search@4.14.2)
 
 packages:
 
@@ -22,9 +22,6 @@ packages:
     peerDependencies:
       '@algolia/client-search': ^4.9.1
       algoliasearch: ^4.9.1
-    peerDependenciesMeta:
-      '@algolia/client-search':
-        optional: true
 
   '@algolia/autocomplete-shared@1.7.1':
     resolution: {integrity: sha512-eTmGVqY3GeyBTT8IWiB2K5EuURAqhnumfktAEoHxfDY2o7vg2rSnO16ZtIG0fMgt3py28Vwgq42/bVEuaQV7pg==}
@@ -332,11 +329,6 @@ packages:
   magic-string@0.25.9:
     resolution: {integrity: sha512-RmF0AsMzgt25qzqqLc1+MbHmhdx0ojF2Fvs4XnOqz2ZOBXzzkEwc/dJQZCYHAn7v1jbVOjAZfK8msRn4BxO4VQ==}
 
-  nanoid@3.3.4:
-    resolution: {integrity: sha512-MqBkQh/OHTS2egovRtLk45wEyNXwF+cokD+1YPf9u5VfJiRdAiRwB2froX5Co9Rh20xs4siNPm8naNotSD6RBw==}
-    engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
-    hasBin: true
-
   nanoid@3.3.6:
     resolution: {integrity: sha512-BGcqMMJuToF7i1rt+2PWSNVnWIkGCU78jBG3RxO/bZlnZPK2Cmi2QaffxGO/2RvWi9sL+FAiRiXMgsyxQ1DIDA==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
@@ -350,10 +342,6 @@ packages:
 
   picocolors@1.0.0:
     resolution: {integrity: sha512-1fygroTLlHu66zi26VoTDv8yRgm0Fccecssto+MhsZ0D/DGW2sm8E8AjW7NU5VVTRt5GxbeZ5qBuJr+HyLYkjQ==}
-
-  postcss@8.4.16:
-    resolution: {integrity: sha512-ipHE1XBvKzm5xI7hiHCZJCSugxvsdq2mPnsq5+UF+VHCjiBvtDrlxJfMBToWaP9D5XlgNmcFGqoHmUn0EYEaRQ==}
-    engines: {node: ^10 || ^12 || >=14}
 
   postcss@8.4.27:
     resolution: {integrity: sha512-gY/ACJtJPSmUFPDCHtX78+01fHa64FaU4zaaWfuh1MhGJISufJAH4cun6k/8fwsHYeK4UQmENQK+tRLCFJE8JQ==}
@@ -384,6 +372,7 @@ packages:
 
   sourcemap-codec@1.4.8:
     resolution: {integrity: sha512-9NykojV5Uih4lgo5So5dtw+f0JgJX30KCNI8gwhz2J9A15wD0Ml6tjHKwf6fTSa6fAdVBdZeNOs9eJ71qCk8vA==}
+    deprecated: Please use @jridgewell/sourcemap-codec instead
 
   supports-preserve-symlinks-flag@1.0.0:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
@@ -393,8 +382,8 @@ packages:
     resolution: {integrity: sha512-/OaKK0xYrs3DmxRYqL/yDc+FxFUVYhDlXMhRmv3z915w2HF1tnN1omB354j8VUGO/hbRzyD6Y3sA7v7GS/ceog==}
     engines: {node: '>=4'}
 
-  vite@3.2.7:
-    resolution: {integrity: sha512-29pdXjk49xAP0QBr0xXqu2s5jiQIXNvE/xwd0vUizYT2Hzqe4BksNNoWllFVXJf4eLZ+UlVQmXfB4lWrc+t18g==}
+  vite@3.2.10:
+    resolution: {integrity: sha512-Dx3olBo/ODNiMVk/cA5Yft9Ws+snLOXrhLtrI3F4XLt4syz2Yg8fayZMWScPKoz12v5BUv7VEmQHnsfpY80fYw==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
     peerDependencies:
@@ -448,9 +437,10 @@ snapshots:
     dependencies:
       '@algolia/autocomplete-shared': 1.7.1
 
-  '@algolia/autocomplete-preset-algolia@1.7.1(algoliasearch@4.14.2)':
+  '@algolia/autocomplete-preset-algolia@1.7.1(@algolia/client-search@4.14.2)(algoliasearch@4.14.2)':
     dependencies:
       '@algolia/autocomplete-shared': 1.7.1
+      '@algolia/client-search': 4.14.2
       algoliasearch: 4.14.2
 
   '@algolia/autocomplete-shared@1.7.1': {}
@@ -533,9 +523,9 @@ snapshots:
 
   '@docsearch/css@3.2.1': {}
 
-  '@docsearch/js@3.2.1':
+  '@docsearch/js@3.2.1(@algolia/client-search@4.14.2)':
     dependencies:
-      '@docsearch/react': 3.2.1
+      '@docsearch/react': 3.2.1(@algolia/client-search@4.14.2)
       preact: 10.11.0
     transitivePeerDependencies:
       - '@algolia/client-search'
@@ -543,10 +533,10 @@ snapshots:
       - react
       - react-dom
 
-  '@docsearch/react@3.2.1':
+  '@docsearch/react@3.2.1(@algolia/client-search@4.14.2)':
     dependencies:
       '@algolia/autocomplete-core': 1.7.1
-      '@algolia/autocomplete-preset-algolia': 1.7.1(algoliasearch@4.14.2)
+      '@algolia/autocomplete-preset-algolia': 1.7.1(@algolia/client-search@4.14.2)(algoliasearch@4.14.2)
       '@docsearch/css': 3.2.1
       algoliasearch: 4.14.2
     transitivePeerDependencies:
@@ -560,9 +550,9 @@ snapshots:
 
   '@types/web-bluetooth@0.0.15': {}
 
-  '@vitejs/plugin-vue@3.1.0(vite@3.2.7)(vue@3.2.39)':
+  '@vitejs/plugin-vue@3.1.0(vite@3.2.10)(vue@3.2.39)':
     dependencies:
-      vite: 3.2.7
+      vite: 3.2.10
       vue: 3.2.39
 
   '@vue/compiler-core@3.2.39':
@@ -587,7 +577,7 @@ snapshots:
       '@vue/shared': 3.2.39
       estree-walker: 2.0.2
       magic-string: 0.25.9
-      postcss: 8.4.16
+      postcss: 8.4.27
       source-map: 0.6.1
 
   '@vue/compiler-ssr@3.2.39':
@@ -774,8 +764,6 @@ snapshots:
     dependencies:
       sourcemap-codec: 1.4.8
 
-  nanoid@3.3.4: {}
-
   nanoid@3.3.6: {}
 
   nprogress@0.2.0: {}
@@ -783,12 +771,6 @@ snapshots:
   path-parse@1.0.7: {}
 
   picocolors@1.0.0: {}
-
-  postcss@8.4.16:
-    dependencies:
-      nanoid: 3.3.4
-      picocolors: 1.0.0
-      source-map-js: 1.0.2
 
   postcss@8.4.27:
     dependencies:
@@ -824,7 +806,7 @@ snapshots:
 
   to-fast-properties@2.0.0: {}
 
-  vite@3.2.7:
+  vite@3.2.10:
     dependencies:
       esbuild: 0.15.18
       postcss: 8.4.27
@@ -833,17 +815,17 @@ snapshots:
     optionalDependencies:
       fsevents: 2.3.2
 
-  vitepress@1.0.0-alpha.14:
+  vitepress@1.0.0-alpha.14(@algolia/client-search@4.14.2):
     dependencies:
       '@docsearch/css': 3.2.1
-      '@docsearch/js': 3.2.1
-      '@vitejs/plugin-vue': 3.1.0(vite@3.2.7)(vue@3.2.39)
+      '@docsearch/js': 3.2.1(@algolia/client-search@4.14.2)
+      '@vitejs/plugin-vue': 3.1.0(vite@3.2.10)(vue@3.2.39)
       '@vue/devtools-api': 6.2.1
       '@vueuse/core': 9.2.0(vue@3.2.39)
       body-scroll-lock: 4.0.0-beta.0
       nprogress: 0.2.0
       shiki: 0.11.1
-      vite: 3.2.7
+      vite: 3.2.10
       vue: 3.2.39
     transitivePeerDependencies:
       - '@algolia/client-search'
